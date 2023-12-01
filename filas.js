@@ -8,7 +8,7 @@ class Queue {
     };
 
     this.dequeue = function () {
-      return this.shift();
+      return items.shift();
     };
 
     this.front = function () {
@@ -28,3 +28,15 @@ class Queue {
     };
   }
 }
+
+var queue = new Queue();
+
+queue.enqueue("Marcell");
+queue.enqueue("Natália");
+queue.enqueue("Django");
+console.log(queue.isEmpty());
+
+// console.log(queue.print());
+
+queue.dequeue();
+// console.log(queue.print());
