@@ -29,14 +29,57 @@ class Queue {
   }
 }
 
+/* 
 var queue = new Queue();
-
 queue.enqueue("Marcell");
 queue.enqueue("Natália");
 queue.enqueue("Django");
-console.log(queue.isEmpty());
-
-// console.log(queue.print());
-
 queue.dequeue();
-// console.log(queue.print());
+console.log(queue.print());
+ */
+
+class PriorityQueue {
+  constructor() {
+    var items = [];
+
+    class QueueElement {
+      constructor(element, priority) {
+        this.element = element;
+        this.priority = priority;
+      }
+    }
+
+    this.enqueue = function (element, priority) {
+      var queueElement = new QueueElement(element, priority);
+      var added = false;
+
+      for (let i = 0; i < items.length; i++) {
+        if (queueElement.priority < items[i].priority) {
+          items.splice(i, 0, queueElement);
+          added = true;
+          break;
+        }
+      }
+      if (!added) items.push(queueElement);
+    };
+
+    this.dequeue = function () {
+      return items.shift();
+    };
+
+    this.print = function () {
+      for (let i = 0; i < items.length; i++) {
+        console.log(items[i].element + " " + items[i].priority);
+      }
+    };
+  }
+}
+
+var pqueue = new PriorityQueue();
+
+pqueue.enqueue("Marcell", 2);
+pqueue.enqueue("Natália", 1);
+pqueue.enqueue("Django", 1);
+pqueue.enqueue("João", 0);
+pqueue.enqueue("Maria", 3);
+pqueue.print();
