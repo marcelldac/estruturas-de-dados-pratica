@@ -10,7 +10,7 @@ function linkedList() {
   var head = null;
 
   this.append = function (element) {
-    //Adiciona um elemento ao fim da lista.
+    //Insere um elemento ao final da lista.
   };
 
   this.insert = function (position, element) {
@@ -33,7 +33,21 @@ function linkedList() {
     //Retorna se a lista está vazia ou não.
   };
 
+  this.toString = function () {
+    //Implementa a conversão para string.
+    var current = head;
+    string = "";
+
+    while (current) {
+      string += current.element + " ";
+      current = current.next;
+
+      return string;
+    }
+  };
+
   this.print = function () {
-    //Imprime no console
+    //Imprime no console.
+    console.log(this.toString());
   };
 }
