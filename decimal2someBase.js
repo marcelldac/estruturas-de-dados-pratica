@@ -3,7 +3,6 @@ function baseConverter(decimalNumber, base) {
     rest,
     baseString = "",
     digits = "0123456789ABCDEF";
-
   while (decimalNumber > 0) {
     rest = Math.floor(decimalNumber % base);
     restStack.push(rest);
