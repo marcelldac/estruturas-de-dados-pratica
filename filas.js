@@ -110,6 +110,6 @@ function hotPotato(namelist, num) {
   return queue.dequeue();
 }
 
-var names = ["Marcell", "Natália", "Django"];
+var names = ["A", "B", "C"];
 var winner = hotPotato(names, 7);
 console.log("The winner is: " + winner);
