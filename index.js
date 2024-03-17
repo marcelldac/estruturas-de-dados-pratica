@@ -4,6 +4,7 @@ const arr3 = new Array();
 
 arr3[0] = arr1;
 arr3[1] = arr2;
+
 //Iterando um array
 for (let i = 0; i < arr3.length; i++) {
   for (let j = 0; j < arr3[i].length; j++) {

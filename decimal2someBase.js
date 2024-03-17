@@ -1,8 +1,9 @@
 function baseConverter(decimalNumber, base) {
-  var restStack = [],
-    rest,
-    baseString = "",
-    digits = "0123456789ABCDEF";
+  let restStack = [];
+  let rest;
+  let baseString = "";
+  let digits = "0123456789ABCDEF";
+
   while (decimalNumber > 0) {
     rest = Math.floor(decimalNumber % base);
     restStack.push(rest);

@@ -1,14 +1,17 @@
 function decimalPBinario(numeroDecimal) {
-  var pilhaDeRestos = [],
-    restoDivisao,
-    stringBinaria = "";
+  let restStack = [];
+  let rest = 0;
+  let binaryString = "";
+
   while (numeroDecimal > 0) {
-    restoDivisao = Math.floor(numeroDecimal % 2);
-    pilhaDeRestos.push(restoDivisao);
+    rest = Math.floor(numeroDecimal % 2);
+    restStack.push(rest);
     numeroDecimal = Math.floor(numeroDecimal / 2);
   }
-  while (pilhaDeRestos.length > 0) {
-    stringBinaria += pilhaDeRestos.pop().toString();
+
+  while (restStack.length > 0) {
+    binaryString += restStack.pop().toString();
   }
-  return stringBinaria;
+
+  return binaryString;
 }
